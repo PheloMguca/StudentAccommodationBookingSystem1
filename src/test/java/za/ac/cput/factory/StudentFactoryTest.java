@@ -20,7 +20,6 @@ class StudentFactoryTest {
                 .setStreet("Salubindza")
                 .build();
 
-
         Student student = StudentFactory.createStudent("230830811", "Sethu Mdluli", GenderType.MALE, address, contactDetails);
         assertNotNull(student);
         System.out.println(student);

@@ -6,13 +6,13 @@ public class StudentFactory {
 
     public static Student createStudent(String studentNumber, String studentName, GenderType studentGender, Address address, ContactDetails contactDetails) {
         if ((Helper.isNullOrEmpty(studentNumber)) || (Helper.isNullOrEmpty(studentName))) {
-            System.out.println("Student number or name is null or empty");
+            throw new IllegalArgumentException("Student number or name is null or empty");
         }
         if (!Helper.isValidEmail(contactDetails.getStudentEmail())){
-            System.out.println("Invalid email address");
+            throw new IllegalArgumentException("Invalid email address");
         }
         if (Helper.isValidPostalCode((contactDetails.getStudentEmail()))){
-            System.out.println("Invalid postal code");
+            throw new IllegalArgumentException("Invalid postal code");
         }
 
         return new Student.Builder()
