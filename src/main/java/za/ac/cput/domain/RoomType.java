@@ -1,6 +1,7 @@
 package za.ac.cput.domain;
 
 public class RoomType {
+    private String roomId;
     private double length;
     private double width;
     private double height;
@@ -12,11 +13,16 @@ public class RoomType {
     }
 
     public RoomType(RoomType.Builder builder) {
+        this.roomId = builder.roomId;
         this.length = builder.length;
         this.width = builder.width;
         this.height = builder.height;
         this.capacity = builder.capacity;
         this.price = builder.price;
+    }
+
+    public String getRoomId() {
+        return roomId;
     }
 
     public double getLength() {
@@ -40,11 +46,11 @@ public class RoomType {
     }
 
 
-
     @Override
     public String toString() {
         return "RoomType{" +
-                "length=" + length +
+                "roomId='" + roomId + '\'' +
+                ", length=" + length +
                 ", width=" + width +
                 ", height=" + height +
                 ", capacity=" + capacity +
@@ -53,11 +59,17 @@ public class RoomType {
     }
 
     public static class Builder {
+        private String roomId;
         private double length;
         private double width;
         private double height;
         private double capacity;
         private double price;
+
+        public RoomType.Builder setRoomId(String roomId) {
+            this.roomId = roomId;
+            return this;
+        }
 
         public RoomType.Builder setLength(double length) {
             this.length = length;
@@ -83,7 +95,9 @@ public class RoomType {
             this.price = price;
             return this;
         }
+
         public Builder copy(RoomType roomType) {
+            this.roomId = roomType.roomId;
             this.length = roomType.length;
             this.width = roomType.width;
             this.height = roomType.height;
@@ -96,4 +110,4 @@ public class RoomType {
             return new RoomType(this);
         }
     }
-    }
+}
