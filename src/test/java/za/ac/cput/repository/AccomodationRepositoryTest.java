@@ -5,10 +5,10 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import za.ac.cput.Factory.AccomodationFactory;
+import za.ac.cput.domain.GenderType;
 import za.ac.cput.domain.Accomodation;
 import za.ac.cput.domain.AccomodationStatus;
 import za.ac.cput.domain.Address;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +17,6 @@ public class AccomodationRepositoryTest {
 
     private static IAccomodationRepository repository = AccomodationRepository.getRepository();
     private static Accomodation accomodation;
-    private static AccomodationFactory AccomodationFactory;
 
     @BeforeAll
     static void setUp() {
@@ -31,7 +30,7 @@ public class AccomodationRepositoryTest {
         accomodation = AccomodationFactory.createAccomodation(
                 "A001",
                 "CPUT Residence",
-                "MALE",
+                GenderType.FEMALE,
                 "0824537952",
                 address,
                 AccomodationStatus.AVAILABLE
