@@ -16,8 +16,8 @@ class RoomTypeFactoryTest {
 
     @BeforeEach
     void setUp() {
-        rt1 = RoomTypeFactory.createRoomType(10.0, 8.0, 3.0, 4.0, 3500.00f);
-        rt2 = RoomTypeFactory.createRoomType(8.0, 6.0, 0, 2.0, 4800.00f);
+        rt1 = RoomTypeFactory.createRoomType("10.0", 8.0, 3.0, 4.0, 4.5,3500.00f);
+        rt2 = RoomTypeFactory.createRoomType("8.0", 6.0, 0, 2.0, 6.5,4800.00f);
     }
 
     @Test

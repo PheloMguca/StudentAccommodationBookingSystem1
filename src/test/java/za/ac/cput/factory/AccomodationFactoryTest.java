@@ -1,7 +1,8 @@
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.Factory.AccomodationFactory;
+import za.ac.cput.domain.GenderType;
+import za.ac.cput.factory.AccomodationFactory;
 import za.ac.cput.domain.Accomodation;
 import za.ac.cput.domain.AccomodationStatus;
 import za.ac.cput.domain.Address;
@@ -23,7 +24,7 @@ class AccomodationFactoryTest {
         Accomodation accomodation = AccomodationFactory.createAccomodation(
                 "A001",
                 "CPUT Residence",
-                "MALE",
+                GenderType.FEMALE,
                 "0824537952",
                 address,
                 AccomodationStatus.AVAILABLE

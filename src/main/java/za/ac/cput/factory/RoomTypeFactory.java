@@ -1,10 +1,13 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.domain.RoomType;
+import za.ac.cput.util.Helper;
 
 public class RoomTypeFactory {
-    public static RoomType createRoomType(double length, double width, double height, double capacity, double price) {
-
+    public static RoomType createRoomType(String roomId, double length, double width, double height, double capacity, double price) {
+        if ((Helper.isNullOrEmpty(roomId))){
+            return null;
+        }
         if (length <= 0) {
             System.out.println("Length must be greater than zero");
         }
@@ -26,6 +29,7 @@ public class RoomTypeFactory {
         }
 
         return new RoomType.Builder()
+                .setRoomId(roomId)
                 .setLength(length)
                 .setWidth(width)
                 .setHeight(height)
