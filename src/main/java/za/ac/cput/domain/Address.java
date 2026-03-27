@@ -1,4 +1,10 @@
 package za.ac.cput.domain;
+//
+// * Adress.java
+// * using Builder Pattern
+// * Author: Sethu Mdluli (230830811)
+// * Date: 17 March 2026
+// */
 
 public class Address extends Student {
     private String city;

@@ -1,5 +1,10 @@
 package za.ac.cput.domain;
-
+//
+// * ContactDetails.java
+// * using Builder Pattern
+// * Author: Sethu Mdluli (230830811)
+// * Date: 17 March 2026
+// */
 public class ContactDetails {
     private String studentEmail;
     private String phone;
