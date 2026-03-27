@@ -16,12 +16,13 @@ public class RoomTypeRepositoryTest {
 
     @BeforeAll
     static void setUp() {
-        RoomType roomType = new RoomTypeFactory().createRoomType(
-                10.0,
-                8.0,
-                3.0,
-                4.0,
-                3500.00f
+         roomType = new RoomTypeFactory().createRoomType(
+                "10.0",
+                 8.0,
+                 4.5,
+                 6.3,
+                 5.4,
+                 5400.00f
         );
     }
 

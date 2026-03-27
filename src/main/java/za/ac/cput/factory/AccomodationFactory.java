@@ -1,4 +1,4 @@
-package za.ac.cput.Factory;
+package za.ac.cput.factory;
 
 import za.ac.cput.domain.Accomodation;
 import za.ac.cput.domain.AccomodationStatus;
