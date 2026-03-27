@@ -8,46 +8,21 @@ import za.ac.cput.util.Helper;
 
 public class AccomodationFactory {
 
-    private static String accomodationId;
-    private static String name;
-    private static String gender;
-    private static String contactNumber;
-    private static Address address;
-    private static AccomodationStatus status;
-
     public static Accomodation createAccomodation(String accomodationId,
                                                   String name,
-                                                  String genderType,
-                                                  String contactNumber,
-
+                                                  GenderType genderType,
+                                                  String contactDetails,
                                                   Address address,
-                                                  AccomodationStatus status) {
-        AccomodationFactory.accomodationId = accomodationId;
-        AccomodationFactory.name = name;
-        AccomodationFactory.gender = gender;
-        AccomodationFactory.contactNumber = contactNumber;
-        AccomodationFactory.address = address;
-        AccomodationFactory.status = status;
+                                                  AccomodationStatus accomodationStatus) {
 
-        // Null / Empty validation
-        if (Helper.isNullOrEmpty(accomodationId) ||
-                Helper.isNullOrEmpty(name) ||
-                Helper.isNullOrEmpty(gender)) {
-            throw new IllegalArgumentException("Accomodation ID, name or gender is missing");
+        if (Helper.isNullOrEmpty(accomodationId) || Helper.isNullOrEmpty(name)) {
+            throw new IllegalArgumentException("Accommodation id or name is null or empty");
         }
 
         if (address == null) {
             throw new IllegalArgumentException("Address cannot be null");
         }
 
-        if (status == null) {
-            throw new IllegalArgumentException("Accomodation status cannot be null");
-        }
-
-        // Contact number validation
-        if (!Helper.isNumeric(contactNumber)) {
-            throw new IllegalArgumentException("Contact number must be numeric");
-        }
         if (!Helper.isValidPostalCode(address.getPostalCode())) {
             throw new IllegalArgumentException("Invalid postal code");
         }
@@ -55,11 +30,10 @@ public class AccomodationFactory {
         return new Accomodation.Builder()
                 .setAccomodationId(accomodationId)
                 .setName(name)
-                .setGender(GenderType.valueOf(gender))
-                .setContactNumber(contactNumber)
+                .setGender(genderType)
+                .setContactNumber(contactDetails)
                 .setAddress(address)
-                .setAccomodationStatus(status)
+                .setAccomodationStatus(accomodationStatus)
                 .build();
     }
 }
-
