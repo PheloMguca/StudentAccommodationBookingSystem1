@@ -59,6 +59,11 @@ public class Accomodation {
                 '}';
     }
 
+    public String getAccomodationId() {
+        return accomodationId;
+    }
+
+
     // Builder class
     public static class Builder {
 
